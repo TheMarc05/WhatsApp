@@ -1,11 +1,13 @@
-import { View, Text } from 'react-native';
+import { FlatList } from 'react-native';
+import chats from '../../assets/data/chats.json';
+import ContactListItem from '../components/ContactListItem';
 
 const ContactsScreen = () => {
     return (
-        <View>
-            <Text>ContactsScreen</Text>
-        </View>
-    )
+        <FlatList 
+            data={chats} 
+            renderItem={({ item }) => <ContactListItem user={item.user} />} style={{ backgroundColor: 'white'}} />
+        )
 }
 
 export default ContactsScreen;
